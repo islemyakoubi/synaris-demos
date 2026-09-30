@@ -1,4 +1,4 @@
-# Cabinet Meissem Gouddi, kinésithérapie (Nabeul) : « mouvement ». Sable chaud, terre cuite, prune. Titre géant Syne, visuel à masque organique qui respire,
+# Cabinet Meissem Gouddi, kinésithérapie (Nabeul) : « mouvement ». Sable chaud, terre cuite, prune. Titre géant Syne, visuel à masque organique qui respire (séance de kinésithérapie du dos),
 # marquee cinétique en lettres détourées, domaines en rangées extensibles, cartes horaires/contacts, formulaire WhatsApp. Syne + DM Sans. Informatif uniquement.
 import lux; K = lux.K; IC = lux.IC; ph = K.ph
 FONTS = 'family=Syne:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700'
@@ -9,7 +9,7 @@ h1,h2,h3{font-weight:700;letter-spacing:-.03em}.brand .mono{width:44px;height:44
 .hero h1{font-size:clamp(3.4rem,9vw,9.6rem);line-height:.86;text-transform:uppercase;font-weight:800}.hero h1 span{display:block}.hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--fg)}
 .hero h1 .c{color:var(--acc)}.lede{max-width:34rem;font-size:1.1rem;margin:2rem 0 2.2rem;opacity:.85}.acts{display:flex;gap:1rem;flex-wrap:wrap}
 .blob{aspect-ratio:3/4;overflow:hidden;border-radius:58% 42% 46% 54%/48% 56% 44% 52%;animation:morph 14s ease-in-out infinite;box-shadow:0 40px 80px rgba(74,35,80,.25)}
-.blob img{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}@keyframes morph{50%{border-radius:42% 58% 60% 40%/58% 40% 60% 42%}}
+.blob img{width:100%;height:100%;object-fit:cover;object-position:48% 50%;filter:saturate(.95)}@keyframes morph{50%{border-radius:42% 58% 60% 40%/58% 40% 60% 42%}}
 .hmeta{display:flex;gap:2.4rem;flex-wrap:wrap;margin-top:2.6rem;font-size:.9rem}.hmeta b{display:block;font:700 .62rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:.4rem}
 .mq{background:var(--plum);color:#F3E9DC;padding:1.6rem 0;font:800 clamp(2.4rem,5vw,4.6rem)/1 var(--disp);text-transform:uppercase;--mqs:36s}.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1.5px #F3E9DC}
 .sec{padding:8rem 0}.sec h2{font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98}
@@ -24,7 +24,7 @@ h1,h2,h3{font-weight:700;letter-spacing:-.03em}.brand .mono{width:44px;height:44
 .rdv{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem}.rdv .box{background:var(--fg);color:#F3E9DC;--line:rgba(243,233,220,.2);--fln:rgba(243,233,220,.3);--fbg:rgba(255,255,255,.05)}.rdv .box select option{color:#2B1830}
 .mapw{border-radius:28px}
 @media(max-width:960px){.hero{grid-template-columns:1fr}.blob{max-width:420px;aspect-ratio:1}.split,.grid3,.rdv{grid-template-columns:1fr}.row{grid-template-columns:3rem 1fr;gap:.6rem 1rem}.row p,.row .ph{grid-column:2}.row svg{display:none}.tile{min-height:380px}}
-@media(max-width:760px){.sec{padding:5.5rem 0}.hero h1 .o{-webkit-text-stroke:1.4px var(--fg)}.box,.plum{padding:1.8rem}}
+@media(max-width:760px){.sec{padding:5.5rem 0}.hero h1 .o{-webkit-text-stroke:1.4px var(--fg)}.box,.plum{padding:1.8rem}.blob{order:-1;width:min(76vw,320px);justify-self:center}.hero{gap:2rem;padding-top:7.5rem}}
 '''
 def build(F, M):
     msg = 'Bonjour, je souhaite prendre rendez-vous au cabinet de kinésithérapie.'
@@ -40,7 +40,7 @@ def build(F, M):
 <p class="lede rise d2">Le cabinet de Meissem Gouddi, kinésithérapeute, se trouve au 3e étage de l'immeuble Turki, avenue Habib Thameur, près de la Faculté des langues. Séances sur rendez-vous.</p>
 <div class="acts rise d3"><a class="btn p" href="#rdv">Prendre rendez-vous {IC['arrow']}</a><a class="btn o" href="{K.telhref(F['tel'])}">{K.I['phone']}{F['tel']}</a></div>
 <div class="hmeta rise d4"><div><b>Horaire relevé</b>Mercredi, {F['wed']}</div><div><b>Adresse</b>123 av. Habib Thameur</div></div></div>
-<div class="blob rise d2">{M.img('hero', 'Plage de Nabeul (photo d’illustration)', sizes='(max-width: 960px) 90vw, 440px', lazy=False)}</div></section>
+<div class="blob rise d2">{M.img('hero', 'Séance de kinésithérapie du dos (photo d’illustration)', sizes='(max-width: 960px) 90vw, 440px', lazy=False)}</div></section>
 <div class="mq" aria-hidden="true"><div>{mq}{mq}</div></div>
 <section class="sec" id="domaines"><div class="w"><p class="kick" data-rv>Domaines</p><h2 data-rv>Ce que le cabinet<br>propose, d'après ses fiches.</h2><div class="rows">{rh}</div>
 <p class="note" data-rv>Liste indicative reprise des informations publiques, à confirmer par la praticienne avant publication.</p></div></section>
