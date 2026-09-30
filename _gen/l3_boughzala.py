@@ -1,5 +1,5 @@
-# Dr Wieme Boughzala, ORL et chirurgie cervico-faciale (Nabeul) : « faïence de Nabeul ». Ivoire, cobalt, émail turquoise. Hero éditorial centré :
-# assiette de Nabeul en rotation lente traversée par une onde sonore animée ; motif de carreaux en CSS ; arches ; formulaire sur panneau cobalt. Playfair Display + Karla.
+# Dr Wieme Boughzala, ORL et chirurgie cervico-faciale (Nabeul) : « l'écoute ». Ivoire, cobalt, émail turquoise. Hero éditorial centré :
+# gros plan d'une oreille dans un grand médaillon traversé par une onde sonore animée ; motif de carreaux de Nabeul en CSS ; arches (anatomie, audition) ; formulaire sur panneau cobalt. Playfair Display + Karla.
 import lux; K = lux.K; IC = lux.IC; ph = K.ph
 FONTS = 'family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@300;400;500;600;700'
 CSS = '''
@@ -10,7 +10,7 @@ em{font-style:italic;color:var(--acc)}.brand .mono{width:44px;height:44px;border
 .hero .lede{max-width:36rem;margin:1.8rem auto 2.2rem;font-size:1.1rem;opacity:.78}.acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .stage{position:relative;height:clamp(300px,42vw,560px);margin-top:3.5rem}
 .plate{position:absolute;left:50%;top:0;width:clamp(340px,48vw,680px);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;overflow:hidden;box-shadow:0 40px 90px rgba(20,33,61,.28)}
-.plate img{width:100%;height:100%;object-fit:cover;animation:spin 90s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.plate img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:breathe 18s ease-in-out infinite alternate}@keyframes breathe{to{transform:scale(1.07)}}
 .wave{position:absolute;left:0;right:0;top:34%;width:100%;height:140px;z-index:2;pointer-events:none}.wave path{fill:none;stroke:#fff;stroke-width:2;stroke-dasharray:14 10;animation:dash 6s linear infinite;mix-blend-mode:difference}
 .wave path+path{stroke:var(--acc);stroke-dasharray:none;stroke-width:1.2;opacity:.8;animation:none}
 @keyframes dash{to{stroke-dashoffset:-240}}
@@ -47,15 +47,15 @@ def build(F, M):
 <section class="hero" id="top"><div class="w"><p class="kick rise">ORL et chirurgie cervico-faciale · Nabeul</p><h1 class="rise d1">Dr Wieme <em>Boughzala</em></h1>
 <p class="lede rise d2">Cabinet d'oto-rhino-laryngologie, immeuble Melek, avenue Hédi Nouira à Oued Souhil, en face de Topnet. Consultations sur rendez-vous.</p>
 <div class="acts rise d3"><a class="btn p" href="#rdv">Prendre rendez-vous {IC['arrow']}</a><a class="btn o" href="{K.telhref(F['tel'])}">{K.I['phone']}{F['tel']}</a></div></div>
-<div class="stage rise d2"><div class="plate">{M.img('hero', 'Assiette en céramique de Nabeul (photo d’illustration)', sizes='(max-width: 760px) 340px, 680px', lazy=False)}</div>{WAVE}</div>
+<div class="stage rise d2"><div class="plate">{M.img('hero', 'Oreille en gros plan (photo d’illustration)', sizes='(max-width: 760px) 340px, 680px', lazy=False)}</div>{WAVE}</div>
 <div class="facts"><div><small>Téléphone</small><p><a href="{K.telhref(F['tel'])}">{F['tel']}</a></p></div><div><small>Horaire relevé</small><p>Mercredi, {F['wed']}</p></div><div><small>Adresse</small><p>Immeuble Melek, 2e étage</p></div></div></section>
 <section class="sec" id="cabinet"><div class="w ed"><div><p class="kick" data-rv>Le cabinet</p><h2 data-rv>Un cabinet d'ORL <em>au cœur de Nabeul</em>.</h2>
 <p class="big" data-rv>Le Dr Wieme Boughzala exerce l'oto-rhino-laryngologie et la chirurgie cervico-faciale au 2e étage de l'immeuble Melek, bureau n°01. Les patients sont reçus sur rendez-vous, pris par téléphone ou via WhatsApp.</p>
 <p class="note" data-rv>Informations reprises des fiches publiques du cabinet ; parcours et qualifications {ph()}</p></div>
-<figure data-rv="r" style="margin:0"><div class="arch">{M.img('faience', 'Nature morte aux faïences de Nabeul (photo d’illustration)', sizes='(max-width: 960px) 90vw, 460px')}</div><figcaption class="cap">Faïences de Nabeul · illustration, ne montre pas le cabinet</figcaption></figure></div></section>
+<figure data-rv="r" style="margin:0"><div class="arch">{M.img('oreille', 'Modèle anatomique de l’oreille (photo d’illustration)', sizes='(max-width: 960px) 90vw, 460px')}</div><figcaption class="cap">Anatomie de l'oreille · illustration, ne montre pas le cabinet</figcaption></figure></div></section>
 <section class="sec tiles" id="specialite"><div class="w"><p class="kick" data-rv>La spécialité</p><h2 data-rv>Oreille, nez, gorge, <em>face et cou</em>.</h2><div class="dom">{domh}</div></div></section>
 <section class="sec"><div class="w gal"><figure data-rv>{'<div class="a">'+M.img('diapason', 'Diapason (photo d’illustration)', sizes='(max-width: 960px) 45vw, 340px')+'</div>'}<figcaption>Diapason · illustration</figcaption></figure>
-<figure data-rv style="--d:.12s"><div class="a">{M.img('tasse', 'Tasse en céramique tunisienne (photo d’illustration)', sizes='(max-width: 960px) 45vw, 440px')}</div><figcaption>Céramique tunisienne · illustration</figcaption></figure>
+<figure data-rv style="--d:.12s"><div class="a">{M.img('aide', 'Oreille équipée d’une aide auditive (photo d’illustration)', sizes='(max-width: 960px) 45vw, 440px')}</div><figcaption>Audition · illustration</figcaption></figure>
 <figure data-rv style="--d:.24s"><div class="a">{M.img('onde', 'Vibrations d’un diapason (photo d’illustration)', sizes='340px')}</div><figcaption>Ondes sonores · illustration</figcaption></figure></div></section>
 <section class="sec" id="infos" style="padding-top:0"><div class="w info"><div class="card" data-rv><h3>Fiche du cabinet</h3><dl class="dl"><div><dt>Médecin</dt><dd>Dr Wieme Boughzala</dd></div><div><dt>Spécialité</dt><dd>ORL et chirurgie cervico-faciale</dd></div>
 <div><dt>Qualification</dt><dd>{ph()}</dd></div><div><dt>Adresse</dt><dd>{F['addr']} (en face de Topnet)</dd></div></dl><div style="margin-top:1rem">{lux.contacts(F, wa_msg=msg)}</div></div>
