@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install pillow
+      - run: pip install pillow segno
       - name: Build sites (images fetched from Wikimedia Commons)
         env:
           DEMOS_ROOT: ${{ github.workspace }}/out
@@ -25,6 +25,8 @@ jobs:
           python _gen/build_manifest.py
           python _gen/data_guest.py
           python _gen/gen_para.py
+          python _gen/data_lot1.py
+          python _gen/data_lot1_guest.py
           cp index.html out/index.html
           touch out/.nojekyll
       - name: Publish to gh-pages

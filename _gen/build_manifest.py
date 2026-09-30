@@ -9,6 +9,8 @@ def get(url):
     raise SystemExit('failed '+url)
 strip=lambda s: re.sub('<[^>]+>','',s or '').strip()
 T=json.load(open(os.path.join(GEN,'titles.json')))
+for extra in ('titles_lot1.json',):  # one file per batch of demos
+    if os.path.exists(os.path.join(GEN,extra)): T.update(json.load(open(os.path.join(GEN,extra))))
 allt=sorted({t for v in T.values() for _,t in v}); info={}
 for i in range(0,len(allt),20):
     chunk=allt[i:i+20]
@@ -22,14 +24,17 @@ for i in range(0,len(allt),20):
                    'license':m.get('LicenseShortName',{}).get('value',''),'license_url':m.get('LicenseUrl',{}).get('value',''),'source':ii['descriptionurl']}
 man={s:[dict(file=f'img/{n}.jpg',**info[t]) for n,t in v] for s,v in T.items()}
 json.dump(man,open(os.path.join(GEN,'images.json'),'w'),ensure_ascii=False,separators=(',',':'))
+cache={}
 for slug,items in man.items():
     os.makedirs(os.path.join(ROOT,slug,'img'),exist_ok=True)
     for it in items:
         fn=os.path.join(ROOT,slug,it['file'])
         if os.path.exists(fn): continue
-        b=get(it['url'])
+        fresh=it['url'] not in cache
+        b=cache[it['url']] if not fresh else cache.setdefault(it['url'],get(it['url']))
         try:
             import io; from PIL import Image
             im=Image.open(io.BytesIO(b)).convert('RGB'); im.thumbnail((1600,1600)); im.save(fn,quality=78,optimize=True,progressive=True)
         except ImportError: open(fn,'wb').write(b)
-        print(slug,it['file']); time.sleep(0.5)
+        print(slug,it['file'])
+        if fresh: time.sleep(0.5)

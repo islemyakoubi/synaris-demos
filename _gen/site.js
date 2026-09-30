@@ -34,6 +34,7 @@
       location.href='mailto:'+SITE.email+'?subject='+encodeURIComponent(SITE.mailSubject||'Demande')+'&body='+encodeURIComponent(build());});
     var d1=f.querySelector('[name=arrivee]'), d2=f.querySelector('[name=depart]');
     if(d1){var today=new Date().toISOString().slice(0,10); d1.min=today; if(d2){d2.min=today; d1.addEventListener('change',function(){d2.min=d1.value; if(d2.value&&d2.value<=d1.value) d2.value='';});}}
+    f.querySelectorAll('input[type=date]').forEach(function(i){if(!i.min) i.min=new Date().toISOString().slice(0,10);});
   }
   // reveal
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
