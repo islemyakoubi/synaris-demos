@@ -37,6 +37,20 @@ em{font-style:italic;color:var(--acc)}.brand .mono{width:44px;height:44px;border
 @media(max-width:760px){.facts{grid-template-columns:1fr}.facts div+div{border-left:0;border-top:1px solid rgba(246,241,231,.14)}.sec{padding:5.5rem 0}.dl div{grid-template-columns:1fr;gap:.1rem}.card{padding:1.6rem}.hero{display:flex;flex-direction:column;padding-top:7.2rem}.stage{order:-1;height:280px;margin:0 0 2rem}.plate{width:280px;box-shadow:0 18px 36px rgba(20,33,61,.22)}.wave{top:30%}.facts{order:1}}
 '''
 WAVE = '<svg class="wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 C 60 70 80 20 120 20 S 180 120 240 120 300 30 360 30 420 110 480 110 540 40 600 40 660 100 720 100 780 10 840 10 900 130 960 130 1020 30 1080 30 1140 110 1200 110 1260 50 1320 50 1380 70 1440 70"/><path d="M0 70 C 120 70 160 40 240 40 S 360 100 480 100 600 50 720 50 840 90 960 90 1080 55 1200 55 1320 70 1440 70"/></svg>'
+def hero_sq(M):
+    """Médaillon net : carré 1700 px (et 800 px) recadré sur l'oreille depuis la vignette Commons 1920 px (portrait 1920x2880)."""
+    import os, io
+    from PIL import Image
+    d = os.path.join(K.ROOT, 'dr-wieme-boughzala-orl-nabeul', 'media'); big, sm = os.path.join(d, 'hero-sq.webp'), os.path.join(d, 'hero-sq-800.webp')
+    if not (os.path.exists(big) and os.path.exists(sm)):
+        url = dict(M.cr)['hero']['url']; url = url.replace('/1280px-', '/1920px-') if '/1280px-' in url else url
+        im = Image.open(io.BytesIO(K.get(url))).convert('RGB'); f = im.width / 1920
+        L, T, S = round(100 * f), round(360 * f), round(1700 * f)
+        sq = im.crop((L, T, L + S, T + S)); sq.save(big, 'WEBP', quality=80, method=6)
+        sq.resize((800, 800), Image.LANCZOS).save(sm, 'WEBP', quality=80, method=6)
+    with Image.open(big) as im: w = im.width
+    return (f'<img src="media/hero-sq-800.webp" srcset="media/hero-sq-800.webp 800w, media/hero-sq.webp {w}w" '
+            f'sizes="(max-width: 760px) 280px, 680px" width="{w}" height="{w}" alt="Oreille en gros plan (photo d’illustration)" fetchpriority="high">')
 def build(F, M):
     msg = 'Bonjour Docteur, je souhaite prendre rendez-vous au cabinet ORL.'
     brand = '<span class="mono">WB</span><span><b>Dr Wieme Boughzala</b><small>ORL · Nabeul</small></span>'
@@ -47,7 +61,7 @@ def build(F, M):
 <section class="hero" id="top"><div class="w"><p class="kick rise">ORL et chirurgie cervico-faciale · Nabeul</p><h1 class="rise d1">Dr Wieme <em>Boughzala</em></h1>
 <p class="lede rise d2">Cabinet d'oto-rhino-laryngologie, immeuble Melek, avenue Hédi Nouira à Oued Souhil, en face de Topnet. Consultations sur rendez-vous.</p>
 <div class="acts rise d3"><a class="btn p" href="#rdv">Prendre rendez-vous {IC['arrow']}</a><a class="btn o" href="{K.telhref(F['tel'])}">{K.I['phone']}{F['tel']}</a></div></div>
-<div class="stage rise d2"><div class="plate">{M.img('hero', 'Oreille en gros plan (photo d’illustration)', sizes='(max-width: 760px) 340px, 680px', lazy=False)}</div>{WAVE}</div>
+<div class="stage rise d2"><div class="plate">{hero_sq(M)}</div>{WAVE}</div>
 <div class="facts"><div><small>Téléphone</small><p><a href="{K.telhref(F['tel'])}">{F['tel']}</a></p></div><div><small>Horaire relevé</small><p>Mercredi, {F['wed']}</p></div><div><small>Adresse</small><p>Immeuble Melek, 2e étage</p></div></div></section>
 <section class="sec" id="cabinet"><div class="w ed"><div><p class="kick" data-rv>Le cabinet</p><h2 data-rv>Un cabinet d'ORL <em>au cœur de Nabeul</em>.</h2>
 <p class="big" data-rv>Le Dr Wieme Boughzala exerce l'oto-rhino-laryngologie et la chirurgie cervico-faciale au 2e étage de l'immeuble Melek, bureau n°01. Les patients sont reçus sur rendez-vous, pris par téléphone ou via WhatsApp.</p>
