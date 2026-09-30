@@ -1,4 +1,4 @@
-# Lot 1 (Cap Bon) — 8 restaurants/cafés + 1 salle des fêtes + 1 atelier faire-part (6 démos retirées le 30/09/2026).
+# Lot 1 (Cap Bon) — 8 restaurants/cafés + 1 atelier faire-part (7 démos retirées le 30/09/2026).
 # Données relevées sur fiches publiques (lacarte.menu, plurielle.tn, restaurantguru.com) le 30/09/2026.
 import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_lot1 import build_resto, build_event, build_invit, ph
@@ -276,40 +276,6 @@ resto(slug='haouaria-beach', name='Haouaria Beach', mark='H', font='outfit',
  loc_h2='Sur la plage d’El Haouaria', loc_p='À la pointe du Cap Bon, à environ 1h30 de Tunis.',
  hours=[('Tous les jours', PH)], hours_short=f'Horaires {PH}',
  ratings=[rt('3.7', 273, 'note moyenne', 'lacarte.menu', 'https://lacarte.menu/restaurants/el-haouaria/haouaria-beach')])
-
-# 15 ----------------------------------------------------------------- ROYAL PALACE (Béni Khalled) — salle des fêtes
-build_event(dict(slug='royal-palace-beni-khalled', name='Salle des fêtes Royal Palace', mark='R', font='playfair',
- theme=dict(accent='#7a1f5c', accent2='#d4a017', soft='#f5e3ef', bg='#fcf9fb', bgalt='#f3ebf0', ink='#2a0b1f'),
- title='Salle des fêtes Royal Palace — Mariages & événements à Béni Khalled (démo)',
- desc='Royal Palace, salle des fêtes à Béni Khalled (Cap Bon) : mariages, fiançailles, henna, anniversaires. Disponibilités, formules, demande de visite WhatsApp.',
- tagline='Salle des fêtes · Béni Khalled', eyebrow='Salle des fêtes · Béni Khalled, Cap Bon',
- h1='Votre mariage au Royal Palace, à Béni Khalled',
- lead='Mariages, fiançailles, henna et fêtes de famille : consultez les formules, vérifiez une date et demandez une visite en un message.',
- hero_alt='Scène de mariage décorée de fleurs (photo d’ambiance)',
- facts=[('Capacité', PH), ('Mariages', 'fiançailles · henna')],
- about_eyebrow='La salle', about_h2='Une salle pour les grands jours',
- about_p=['Le Royal Palace accueille les mariages et fêtes de famille de Béni Khalled et du Cap Bon.',
-          f'Capacité, équipements (climatisation, parking, cuisine traiteur, loge des mariés) et tarifs {PH} : ils seront renseignés avec vous.'],
- about_img='about', about_alt='Table de réception décorée (photo d’ambiance)',
- chips=['Mariages', 'Fiançailles', 'Henna', 'Anniversaires'],
- pkg_h2='Des formules claires, un devis rapide', pkg_lead='Trois formules d’exemple pour aider les familles à choisir.',
- pkgs=[dict(eyebrow='Essentielle', name='Location de la salle', desc='La salle seule, pour votre traiteur et votre décorateur.', items=['Salle et mobilier', 'Climatisation / sonorisation ' + PH, 'Horaires ' + PH]),
-       dict(eyebrow='La plus demandée', name='Mariage clé en main', desc='Salle, décoration et service.', items=['Salle et décoration « kosha »', 'Service en salle', 'Traiteur partenaire ' + PH], hl=True),
-       dict(eyebrow='Petits comités', name='Fiançailles & henna', desc='Pour les fêtes plus intimes.', items=['Salle en configuration réduite', 'Décoration', 'Jours de semaine ' + PH])],
- event_types=['Mariage', 'Fiançailles / Outya', 'Henna', 'Anniversaire', 'Circoncision (Tahour)', 'Autre événement'],
- gal_h2='Inspirations', gal_lead='Décors de tables, scènes et traditions de mariage.',
- gallery=[('g1', 'Centre de table fleuri'), ('g2', 'Table de banquet de mariage'), ('g3', 'Henné de la mariée'), ('g4', 'Broderie tunisienne traditionnelle'), ('g5', 'Scène décorée'), ('g6', 'Béni Khalled')],
- book_note=f'Visite de la salle sur rendez-vous. Acompte et conditions de réservation {PH}.',
- form_intro='Bonjour Royal Palace, je souhaite une visite / un devis :',
- wa_msg='Bonjour Royal Palace, je souhaite connaître vos disponibilités et tarifs.',
- wa='21622316000', wa_disp='+216 22 316 000', tels=['+216 22 316 000'], email='',
- address='Béni Khalled, gouvernorat de Nabeul', map_q='36.6539114,10.5920255', map_z=16,
- loc_h2='À Béni Khalled', loc_p='Au cœur du Cap Bon, à environ 45 min de Tunis et 25 min de Nabeul.',
- hours=[('Visites', f'sur rendez-vous {PH}')], hours_short=f'Visites sur rendez-vous {PH}',
- social=[('Facebook', 'www.facebook.com/Royal-Palace-793421110739436'), ('Instagram', 'www.instagram.com/salle_des_fetes_royal_palace')],
- collect_txt='Un lien « Laissez un avis » envoyé aux familles après l’événement : plus d’avis récents, visibles par les futurs mariés.',
- features=[],
- ratings=[rt('3.9', 76, 'note moyenne', 'plurielle.tn', 'https://plurielle.tn/pro/nabeul/salle-des-fetes-royal-palace/')]))
 
 # 16 ----------------------------------------------------------------- RUSTIQUE INVITATION (Hammamet) — atelier faire-part
 build_invit(dict(slug='rustique-invitation-hammamet', name='Rustique Invitation', mark='R', font='fraunces',
