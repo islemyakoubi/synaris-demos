@@ -1,14 +1,14 @@
 # Cabinet Ahmed Boukadida, kinésithérapie et réadaptation fonctionnelle (Hammamet) : « performance ». Noir, vert acide. Typographie condensée géante Anton,
-# bande élastique en lévitation, compteurs, cartes numérotées, bandeau en défilement, formulaire. Anton + Archivo. Informatif uniquement.
+# portrait cadré vert acide (kinésiotaping sur la nuque et les épaules), compteurs, cartes numérotées, bandeau en défilement, formulaire. Anton + Archivo. Informatif uniquement.
 import lux; K = lux.K; IC = lux.IC; ph = K.ph
 FONTS = 'family=Anton&family=Archivo:wght@300;400;500;600;700;800'
 CSS = '''
 :root{--bg:#0A0A0A;--fg:#F2F2EE;--acc:#D4FF3A;--onacc:#0A0A0A;--line:rgba(242,242,238,.13);--hbg:rgba(10,10,10,.86);--disp:Anton,Impact,sans-serif;--sans:Archivo,system-ui,sans-serif;--r:0;--mapbg:#161616;--fbg:rgba(255,255,255,.04)}
 h1,h2,h3{text-transform:uppercase;letter-spacing:.005em}.brand .mono{width:44px;height:44px;display:grid;place-items:center;background:var(--acc);color:#0A0A0A;font:400 1.1rem var(--disp);clip-path:polygon(0 0,100% 0,100% 72%,72% 100%,0 100%)}
-.hero{position:relative;min-height:100svh;padding:9rem 0 3rem;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-.hero h1{font-size:clamp(4rem,14.5vw,15rem);line-height:.84;position:relative;z-index:2}.hero h1 span{display:block}.hero h1 .s{color:transparent;-webkit-text-stroke:2px var(--acc)}
-.elas{position:absolute;right:0;top:16%;width:min(62vw,860px);z-index:1;animation:float 7s ease-in-out infinite;filter:drop-shadow(0 30px 60px rgba(212,255,58,.18))}.elas img{width:100%;mix-blend-mode:screen;-webkit-mask-image:radial-gradient(closest-side,#000 70%,transparent);mask-image:radial-gradient(closest-side,#000 70%,transparent)}
-@keyframes float{50%{transform:translateY(-22px) rotate(-3deg)}}
+.hero .kick{max-width:60%;margin-bottom:2.2rem}.hero{position:relative;min-height:100svh;padding:9rem 0 3rem;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero h1{font-size:clamp(4rem,12.5vw,13rem);line-height:.84;position:relative;z-index:2}.hero h1 span{display:block}.hero h1 .s{color:transparent;-webkit-text-stroke:2px var(--acc)}
+.elas{position:absolute;right:clamp(1.5rem,5vw,5rem);top:16%;width:min(24vw,350px);aspect-ratio:3/4;z-index:1;margin:0}.elas:before{content:'';position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--acc);z-index:-1}.elas .i{width:100%;height:100%;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.6)}.elas img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;animation:zoom 16s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1.06)}}.elas figcaption{position:absolute;left:0;bottom:-2.2rem;font-size:.7rem;opacity:.6;letter-spacing:.06em}
 .hrow{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:end;margin-top:2.4rem;position:relative;z-index:2}.lede{max-width:34rem;font-size:1.08rem;margin:0;opacity:.85}.acts{display:flex;gap:1rem;flex-wrap:wrap;justify-content:flex-end}
 .tick{display:flex;border-block:1px solid var(--line);margin-top:3rem;position:relative;z-index:2}.tick div{flex:1;padding:1.2rem 1.4rem}.tick div+div{border-left:1px solid var(--line)}.tick small{display:block;font:700 .62rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:.5rem}
 .mq{background:var(--acc);color:#0A0A0A;padding:1.1rem 0;font:400 clamp(2rem,4.4vw,3.8rem)/1 var(--disp);text-transform:uppercase;--mqs:26s;transform:rotate(-1.5deg);margin:-1rem 0 0;width:104%;margin-left:-2%}
@@ -22,7 +22,7 @@ h1,h2,h3{text-transform:uppercase;letter-spacing:.005em}.brand .mono{width:44px;
 .dl{margin:0}.dl div{padding:.85rem 0;border-bottom:1px solid var(--line)}.dl dt{font:700 .62rem/1.6 var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.6}.dl dd{margin:0}
 .rdv{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem}.rdv .f{background:var(--fg);color:#0A0A0A;padding:2.6rem;--line:rgba(10,10,10,.15);--fln:rgba(10,10,10,.25);--acc:#0A0A0A;--onacc:#D4FF3A}
 .mapw{filter:grayscale(.2)}
-@media(max-width:960px){.elas{position:relative;right:auto;top:auto;width:100%;margin:0 0 .6rem}.hero{justify-content:flex-start}.hrow,.dual,.rdv{grid-template-columns:1fr}.acts{justify-content:flex-start}.cards,.info{grid-template-columns:1fr}.dual figure{min-height:380px}}
+@media(max-width:960px){.elas{position:relative;right:auto;top:auto;width:min(78vw,380px);margin:0 0 3.4rem}.hero{justify-content:flex-start}.hrow,.dual,.rdv{grid-template-columns:1fr}.acts{justify-content:flex-start}.cards,.info{grid-template-columns:1fr}.dual figure{min-height:380px}}
 @media(max-width:760px){.sec{padding:5.5rem 0}.tick{flex-direction:column}.tick div+div{border-left:0;border-top:1px solid var(--line)}.info>div,.rdv .f{padding:1.6rem}.hero h1 .s{-webkit-text-stroke:1.4px var(--acc)}}
 '''
 def build(F, M):
@@ -34,7 +34,7 @@ def build(F, M):
     ch = ''.join(f'<article data-rv style="--d:{i*.1:.1f}s"><span class="n">0{i+1}</span><h3>{t}</h3><p>{p}</p>{ph(s)}</article>' for i, (t, p, s) in enumerate(cards))
     mq = ''.join(f'<span>{w}</span>' for w in ['Rééducation', '◆', 'Réadaptation', '◆', 'Hammamet', '◆'] * 2)
     body = f'''{lux.header(brand, links)}<main id="main">
-<section class="hero" id="top"><div class="elas rise d2">{M.img('hero', 'Bande élastique de renforcement (image d’illustration)', sizes='(max-width: 960px) 100vw, 860px', lazy=False)}</div>
+<section class="hero" id="top"><figure class="elas rise d2"><div class="i">{M.img('hero', 'Bandes de kinésiotaping sur la nuque et les épaules (photo d’illustration)', sizes='(max-width: 960px) 78vw, 420px', lazy=False)}</div><figcaption>Kinésiotaping · photo d'illustration</figcaption></figure>
 <div class="w"><p class="kick rise">Kinésithérapie et réadaptation fonctionnelle · Hammamet</p><h1 class="rise d1"><span>Rééduca</span><span class="s">tion.</span></h1>
 <div class="hrow"><p class="lede rise d2">Cabinet d'Ahmed Boukadida, kinésithérapeute, rue Assad Ibn El Fourat, dans la zone touristique de Hammamet. Séances sur rendez-vous.</p>
 <div class="acts rise d3"><a class="btn p" href="#rdv">Prendre rendez-vous {IC['arrow']}</a><a class="btn o" href="{K.telhref(F['tel'])}">{K.I['phone']}{F['tel']}</a></div></div>
