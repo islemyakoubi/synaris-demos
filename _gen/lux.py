@@ -158,4 +158,4 @@ def page(F, title, desc, fonts, css, body, theme, fav):
     return K.page(F, title, desc, fonts, CSS + css, body + JS, theme, fav)
 def fav(bg, fg, txt, font='Georgia', shape='circle'):
     s = f"<circle cx='32' cy='32' r='30' fill='{bg}'/>" if shape == 'circle' else f"<rect width='64' height='64' rx='14' fill='{bg}'/>"
-    return f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>{s}<text x='32' y='41' font-size='24' text-anchor='middle' fill='{fg}' font-family='{font}'>{txt}</text></svg>
+    return f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>{s}<text x='32' y='41' font-size='24' text-anchor='middle' fill='{fg}' font-family='{font}'>{txt}</text></svg>"
