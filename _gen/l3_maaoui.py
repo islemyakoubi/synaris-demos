@@ -1,5 +1,5 @@
 # Maître Imen Maaoui, avocate (Grombalia) : « bilingue ». Parchemin, bordeaux, or. Hero typographique bilingue (Bodoni Moda / Noto Naskh Arabic) séparé
-# par un filet or animé, colonne de reliures, principes en chiffres romains, domaines indicatifs (à confirmer), olivier en parallaxe, rendez-vous sans consultation.
+# par un filet or animé, porte de médina en colonne, principes en chiffres romains, domaines indicatifs (à confirmer), olivier en parallaxe, rendez-vous sans consultation.
 import lux; K = lux.K; IC = lux.IC; ph = K.ph
 FONTS = 'family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Work+Sans:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600'
 CSS = '''
@@ -40,7 +40,7 @@ def build(F, M):
 <p class="lede rise d2">Cabinet d'avocate avenue de la Paix, à Grombalia. Les clients sont reçus sur rendez-vous, dans le respect du secret professionnel.</p>
 <div class="acts rise d3"><a class="btn p" href="#rdv">Demander un rendez-vous {IC['arrow']}</a><a class="btn o" href="{K.telhref(F['tel'])}">{K.I['phone']}{F['tel']}</a></div></div>
 <span class="rule" aria-hidden="true"></span><p class="arh ar rise d2" lang="ar">{F['ar']}<br>محامية<small>قرمبالية · شارع السلام</small></p>
-<figure class="spine rise d3" style="margin:0">{M.img('hero', 'Rayonnage de livres anciens (photo d’illustration)', sizes='300px', lazy=False)}</figure></section>
+<figure class="spine rise d3" style="margin:0">{M.img('hero', 'Porte traditionnelle de la médina de Tunis (photo d’illustration)', sizes='300px', lazy=False)}</figure></section>
 <section class="sec ox" id="principes"><div class="w"><p class="kick" data-rv>Principes</p><h2 data-rv>Écoute, <em>confidentialité</em>, indépendance.</h2>
 <div class="prin"><div data-rv><b>I</b><h3>Secret professionnel</h3><p>Ce qui est confié à l'avocate reste couvert par le secret professionnel.</p></div><div data-rv style="--d:.1s"><b>II</b><h3>Indépendance</h3><p>Un exercice indépendant, dans le cadre de la déontologie de l'Ordre.</p></div>
 <div data-rv style="--d:.2s"><b>III</b><h3>Sur rendez-vous</h3><p>Chaque dossier s'examine au cabinet, lors d'un entretien fixé à l'avance.</p></div></div></div></section>
@@ -49,7 +49,7 @@ def build(F, M):
 <section class="sec" id="cabinet"><div class="w"><div class="info" data-rv><div><h3>Le cabinet</h3><dl class="dl" style="margin:0">{''.join(f'<div style="display:grid;grid-template-columns:10rem 1fr;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)"><dt style="font:600 .62rem/1.7 var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.6">{a}</dt><dd style="margin:0">{b}</dd></div>' for a, b in [('Avocate', 'Maître Imen Maaoui'), ('Barreau', ph()), ('Langues', ph()), ('Adresse', F['addr'])])}</dl>
 <div style="margin-top:1rem">{lux.contacts(F, 'WhatsApp · demande de rendez-vous', msg)}</div></div><div><h3>Horaires</h3>{lux.hours(F)}<figure style="margin:2rem 0 0;max-width:260px">{M.img('balance', 'Balance de la justice (illustration)', sizes='260px', extra=' style="mix-blend-mode:multiply"')}</figure></div></div></div></section>
 <section class="sec" id="rdv" style="padding-top:0"><div class="w rdv"><div data-rv><p class="kick">Rendez-vous</p><h2>Demander un <em>rendez-vous</em></h2><p style="margin-top:1.4rem;opacity:.8">Le formulaire prépare un message WhatsApp pour fixer un entretien au cabinet. Aucune consultation n'est donnée par message.</p>
-<figure style="margin:2rem 0 0;max-width:380px" data-rv>{M.img('codes', 'Ouvrages de droit sur une étagère (photo d’illustration)', sizes='380px')}</figure></div>
+<figure style="margin:2rem 0 0;max-width:380px" data-rv>{M.img('codes', 'Grille en fer forgé de l’ancien siège du Tribunal administratif, à Tunis (photo d’illustration)', sizes='380px')}</figure></div>
 <div class="f" data-rv style="--d:.1s">{lux.form(F, 'Bonjour Maître, je souhaite prendre rendez-vous à votre cabinet.', spec, 'Envoyer la demande', note)}</div></div></section>
 <section class="sec" id="acces" style="padding-top:0;padding-bottom:4rem"><div class="w"><p class="kick" data-rv>Accès</p><h2 data-rv style="margin-bottom:1rem">Avenue de la Paix, <em>Grombalia</em></h2><p data-rv>{F['addr']}. <a href="{F['maps']}" target="_blank" rel="noopener" style="color:var(--acc);text-decoration:underline">Ouvrir dans Google Maps</a></p>{lux.mapblock(F)}</div></section>
 </main>{lux.footer(F, M, brand, links)}{lux.dock(F)}'''
