@@ -29,6 +29,7 @@ jobs:
           python _gen/data_lot1_guest.py
           python _gen/gen_v2.py
           python _gen/gen_lot2.py
+          python _gen/gen_lux.py
           cp index.html out/index.html
           touch out/.nojekyll
       - name: Publish to gh-pages
