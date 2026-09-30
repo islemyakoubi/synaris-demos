@@ -1,6 +1,6 @@
-# V2 — three hand-crafted demo designs (one bespoke template per business), built AFTER data_lot1.py:
-#   dar-mrad-nabeul (v2_darmrad.py), royal-palace-beni-khalled (v2_royal.py), haouaria-beach (v2_haouaria.py).
-# Replaces ONLY the generic lot-1 output of these 3 slugs. Images: free-licence Wikimedia Commons photos
+# V2 — two hand-crafted demo designs (one bespoke template per business), built AFTER data_lot1.py:
+#   dar-mrad-nabeul (v2_darmrad.py), haouaria-beach (v2_haouaria.py). (royal-palace-beni-khalled removed 30/09/2026.)
+# Replaces ONLY the generic lot-1 output of these 2 slugs. Images: free-licence Wikimedia Commons photos
 # listed in titles_v2.json, fetched at build time and resized to WebP (1280 + 640 px).
 import json, os, re, io, sys, time, shutil, html, urllib.request, urllib.parse
 from urllib.parse import quote
@@ -120,8 +120,8 @@ def write(slug, h):
 if __name__ == '__main__':
     T = json.load(open(os.path.join(GEN, 'titles_v2.json')))
     info = commons_info(sorted({t for v in T.values() for _, t in v}))
-    import v2_darmrad, v2_royal, v2_haouaria
-    for mod in (v2_darmrad, v2_royal, v2_haouaria):
+    import v2_darmrad, v2_haouaria
+    for mod in (v2_darmrad, v2_haouaria):
         slug = mod.SLUG; clean_old(slug)
         M = Media(slug, T[slug], info)
         write(slug, mod.build(M))
