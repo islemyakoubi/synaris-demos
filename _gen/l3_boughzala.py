@@ -34,7 +34,7 @@ em{font-style:italic;color:var(--acc)}.brand .mono{width:44px;height:44px;border
 .mapw{border-radius:6px;border:10px solid #fff;box-shadow:0 20px 50px rgba(20,33,61,.12)}
 .ft{background:#EFE7D8}
 @media(max-width:960px){.ed,.info,.rdv{grid-template-columns:1fr;gap:3rem}.dom{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}.gal figure:nth-child(3){display:none}.rdv{padding:2.4rem 1.4rem}}
-@media(max-width:760px){.facts{grid-template-columns:1fr}.facts div+div{border-left:0;border-top:1px solid rgba(246,241,231,.14)}.sec{padding:5.5rem 0}.dl div{grid-template-columns:1fr;gap:.1rem}.card{padding:1.6rem}.stage{height:300px}.wave{top:22%}}
+@media(max-width:760px){.facts{grid-template-columns:1fr}.facts div+div{border-left:0;border-top:1px solid rgba(246,241,231,.14)}.sec{padding:5.5rem 0}.dl div{grid-template-columns:1fr;gap:.1rem}.card{padding:1.6rem}.hero{display:flex;flex-direction:column;padding-top:7.2rem}.stage{order:-1;height:280px;margin:0 0 2rem}.plate{width:280px;box-shadow:0 18px 36px rgba(20,33,61,.22)}.wave{top:30%}.facts{order:1}}
 '''
 WAVE = '<svg class="wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 C 60 70 80 20 120 20 S 180 120 240 120 300 30 360 30 420 110 480 110 540 40 600 40 660 100 720 100 780 10 840 10 900 130 960 130 1020 30 1080 30 1140 110 1200 110 1260 50 1320 50 1380 70 1440 70"/><path d="M0 70 C 120 70 160 40 240 40 S 360 100 480 100 600 50 720 50 840 90 960 90 1080 55 1200 55 1320 70 1440 70"/></svg>'
 def build(F, M):
