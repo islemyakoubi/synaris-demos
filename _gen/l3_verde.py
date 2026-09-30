@@ -1,5 +1,5 @@
-# Villa Verde (Bir Bou Rekba, Hammamet Nord) : « chaux et oliviers ». Vert profond, blanc de chaux, terre cuite. Hero plein écran (olivier, zoom lent Ken Burns),
-# titre Marcellus très espacé, arches, équipements en liste éditoriale, distances en grands chiffres, feu de camp, réservation WhatsApp (arrivée/départ). Marcellus + Jost.
+# Villa Verde (Bir Bou Rekba, Hammamet Nord) : « chaux et oliviers ». Vert profond, blanc de chaux, terre cuite. Hero plein écran (arcades blanches et piscine, zoom lent Ken Burns),
+# titre Marcellus très espacé, maison sous arche, équipements en liste éditoriale, galerie chambres/piscine, distances en grands chiffres, feu de camp, réservation WhatsApp (arrivée/départ). Marcellus + Jost.
 import lux; K = lux.K; IC = lux.IC; ph = K.ph
 FONTS = 'family=Marcellus&family=Jost:wght@300;400;500;600'
 CSS = '''
@@ -7,11 +7,14 @@ CSS = '''
 body{font-weight:300}h1,h2,h3{letter-spacing:.02em}.brand .mono{width:44px;height:44px;border-radius:50% 50% 0 0;background:var(--fg);display:grid;place-items:center;color:#F5F1E8;font:400 1.1rem var(--disp)}
 .hdr{color:#fff}.hdr.scrolled{color:var(--fg)}
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;color:#fff}.kb{position:absolute;inset:0;z-index:-2;overflow:hidden}.kb img{width:100%;height:100%;object-fit:cover;animation:kb 26s ease-in-out infinite alternate}
-@keyframes kb{from{transform:scale(1)}to{transform:scale(1.14) translate(-2%,-2%)}}.hero:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(20,38,28,.85),rgba(20,38,28,.1) 55%,rgba(20,38,28,.45))}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.14) translate(-2%,-2%)}}.hero:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(20,38,28,.78),rgba(20,38,28,.05) 55%,rgba(20,38,28,.4))}
 .hin{padding:10rem 0 4rem;text-align:center}.hero .kick{justify-content:center;color:#F1C9A5}.hero .kick:after{content:'';width:34px;height:1px;background:currentColor}
 .hero h1{font-size:clamp(3.8rem,11vw,11rem);line-height:.9;letter-spacing:.12em;text-transform:uppercase;margin-right:-.12em}.lede{max-width:36rem;margin:1.6rem auto 2.2rem;font-size:1.1rem;opacity:.9}.acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.hero .btn.o{color:#fff}
 .sec{padding:8rem 0}.sec h2{font-size:clamp(2.4rem,5vw,4.8rem);line-height:1.02}
 .intro{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}.arch{margin:0;border-radius:999px 999px 0 0;overflow:hidden;aspect-ratio:3/4;position:relative}.arch img{width:100%;height:100%;object-fit:cover}
+.hcap{position:absolute;right:1.2rem;bottom:1rem;font-size:.7rem;opacity:.75;z-index:1}
+.gal{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:1.2rem;margin-top:4rem}.gal figure{margin:0;position:relative;overflow:hidden;aspect-ratio:3/4}.gal figure:nth-child(2){aspect-ratio:auto}.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:1rem;bottom:1rem;font-size:.72rem;background:rgba(31,58,43,.75);padding:.3rem .7rem}
 .arch figcaption{position:absolute;left:0;right:0;bottom:1rem;text-align:center;color:#fff;font-size:.72rem;text-shadow:0 1px 6px rgba(0,0,0,.5)}
 .intro p.big{font-size:1.22rem;line-height:1.8;margin-top:1.6rem}
 .dist{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:3rem}.dist div{padding:1.6rem 0}.dist div+div{border-left:1px solid var(--line);padding-left:2rem}.dist b{display:block;font:400 4rem/1 var(--disp);color:var(--acc)}.dist span{font-size:.9rem;opacity:.8}
@@ -22,7 +25,7 @@ body{font-weight:300}h1,h2,h3{letter-spacing:.02em}.brand .mono{width:44px;heigh
 .fire .tx h2{font-size:clamp(2.2rem,4vw,3.8rem)}.fire .tx .kick{color:#FFE3D2}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}.card{background:#fff;padding:2.6rem;border:1px solid var(--line)}.card h3{font-size:1.9rem;margin-bottom:1rem}
 .rdv{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem}.rdv .card{background:#FBF8F2}
-@media(max-width:960px){.intro,.two,.rdv,.fire{grid-template-columns:1fr;gap:3rem}.eq{grid-template-columns:1fr}.eq article{margin:0;border-right:0;border-bottom:1px solid var(--line);padding:2rem 0}.fire{gap:0}.fire figure{min-height:340px}.arch{max-width:460px}}
+@media(max-width:960px){.gal{grid-template-columns:1fr 1fr}.gal figure:nth-child(2){grid-column:1/-1;aspect-ratio:4/3;order:-1}.intro,.two,.rdv,.fire{grid-template-columns:1fr;gap:3rem}.eq{grid-template-columns:1fr}.eq article{margin:0;border-right:0;border-bottom:1px solid var(--line);padding:2rem 0}.fire{gap:0}.fire figure{min-height:340px}.arch{max-width:460px}}
 @media(max-width:760px){.sec{padding:5.5rem 0}.hero h1{letter-spacing:.06em}.card{padding:1.6rem}.dist b{font-size:3rem}}
 '''
 NOTE = "Démo : aucune donnée n'est enregistrée. Le bouton ouvre WhatsApp avec votre demande ; la maison d'hôtes confirme disponibilités et conditions."
@@ -37,15 +40,17 @@ def build(F, M):
     spec = [('text', 'Nom et prénom'), ('tel', 'Téléphone'), ('date', 'Arrivée'), ('date', 'Départ'), ('select', 'Personnes', ['1', '2', '3', '4', '5', '6', 'Plus de 6']), ('textarea', 'Message (facultatif)')]
     w, h = M.dims['hero']
     body = f'''{lux.header(brand, links, ('Réserver', '#rdv'))}<main id="main">
-<section class="hero" id="top"><div class="kb">{M.img('hero', 'Olivier dans la campagne tunisienne (photo d’illustration)', sizes='100vw', lazy=False)}</div>
+<section class="hero" id="top"><div class="kb">{M.img('hero', 'Arcades blanches autour d’une piscine dans une maison tunisienne (photo d’illustration)', sizes='100vw', lazy=False)}</div><p class="hcap">Photo d'illustration · ne montre pas Villa Verde</p>
 <div class="w hin"><p class="kick rise">Maison d'hôtes · Bir Bou Rekba · Hammamet Nord</p><h1 class="rise d1">Villa Verde</h1>
 <p class="lede rise d2">Une villa blanchie à la chaux dans les collines au nord de Hammamet, avec piscine extérieure et petit-déjeuner offert.</p>
 <div class="acts rise d3"><a class="btn p" href="#rdv">Demander une disponibilité {IC['arrow']}</a><a class="btn o" href="{K.telhref(F['tel'])}">{K.I['phone']}{F['tel']}</a></div></div></section>
-<section class="sec" id="maison"><div class="w intro"><figure class="arch" data-rv>{M.img('piscine', 'Piscine sous les palmiers à Yasmine Hammamet (photo d’illustration)', sizes='(max-width: 960px) 90vw, 520px')}<figcaption>Illustration · ne montre pas Villa Verde</figcaption></figure>
+<section class="sec" id="maison"><div class="w intro"><figure class="arch" data-rv>{M.img('maison', 'Maison blanchie à la chaux avec arcades (photo d’illustration)', sizes='(max-width: 960px) 90vw, 520px')}<figcaption>Illustration · ne montre pas Villa Verde</figcaption></figure>
 <div><p class="kick" data-rv>La maison</p><h2 data-rv>Chaux blanche,<br>collines et oliviers.</h2><p class="big" data-rv>Villa Verde est une maison d'hôtes de Bir Bou Rekba, sur les hauteurs au nord de Hammamet. Chambres, suites et une villa entourent une piscine extérieure.</p>
 <div class="dist" data-rv><div><b>6 km</b><span>du golf Yasmine</span></div><div><b>12 km</b><span>de la plage de Lambouka</span></div></div>
 <p class="note" data-rv>Description et distances reprises de la fiche publiée sur kharjet.tn, à confirmer par l'établissement.</p></div></div></section>
 <section class="sec green" id="chambres"><div class="w"><p class="kick" data-rv>Chambres et équipements</p><h2 data-rv>Tout ce que mentionne la fiche.</h2><div class="eq">{eqh}</div>
+<div class="gal"><figure data-rv>{M.img('chambre', 'Chambre blanchie à la chaux avec lit (photo d’illustration)', sizes='(max-width: 960px) 46vw, 380px')}<figcaption>Chambre · illustration</figcaption></figure><figure data-rv style="--d:.12s">{M.img('bassin', 'Piscine bordée d’arcades (photo d’illustration)', sizes='(max-width: 960px) 92vw, 480px')}<figcaption>Piscine · illustration</figcaption></figure><figure data-rv style="--d:.24s">{M.img('chambre2', 'Chambre à deux lits au décor tunisien (photo d’illustration)', sizes='(max-width: 960px) 46vw, 380px')}<figcaption>Chambre · illustration</figcaption></figure></div>
+<p class="note" data-rv style="margin-top:1.2rem">Photos d'illustration, elles ne montrent pas Villa Verde.</p>
 <p class="note" data-rv style="margin-top:2rem">Équipements repris de la fiche kharjet.tn. Tarifs, capacités et conditions : {ph()}</p></div></section>
 <section class="fire"><figure data-rv="c">{M.img('feu', 'Feu de camp la nuit (photo d’illustration)', sizes='(max-width: 960px) 100vw, 60vw')}</figure><div class="tx" data-rv><p class="kick">Le soir</p><h2>Un coin feu de camp, sous les étoiles.</h2><p style="margin-top:1.2rem;opacity:.9">La maison dispose d'un espace feu de camp à l'extérieur, d'après sa fiche publique.</p></div></section>
 <section class="sec" id="infos"><div class="w two"><div class="card" data-rv><h3>Contact</h3>{lux.contacts(F, 'WhatsApp · demande de séjour', msg)}</div><div class="card" data-rv style="--d:.1s"><h3>Accueil</h3>{lux.hours(F)}
