@@ -1,0 +1,305 @@
+{
+"dr-ayoub-trabelsi-orl-nabeul": {
+"mod": "l3_trabelsi",
+"name": "Dr Ayoub Trabelsi",
+"kind": "med",
+"sector": "ORL · chirurgie de la face et du cou",
+"city": "Nabeul",
+"addr": "Complexe Jasmin Médical, 2e étage, bureau 203, avenue Hédi Nouira, Nabeul (en face de la Clinique El Amen)",
+"tel": "+216 24 012 348",
+"tels": [
+[
+"Autre numéro publié",
+"+216 24 012 110"
+],
+[
+"Cabinet (fixe)",
+"+216 36 233 095"
+]
+],
+"wa": "21624012348",
+"email": "ayoub_trabelsi@live.com",
+"wed": "jusqu'à 15h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20Dr%20Ayoub%20Trabelsi%20ORL&query_place_id=ChIJsWN4vu6ZAhMR3bFISzVfL5E",
+"q": "Complexe Jasmin Médical, avenue Hédi Nouira, Nabeul"
+},
+"dr-wieme-boughzala-orl-nabeul": {
+"mod": "l3_boughzala",
+"name": "Dr Wieme Boughzala",
+"kind": "med",
+"sector": "ORL et chirurgie cervico-faciale",
+"city": "Nabeul",
+"addr": "Immeuble Melek, 2e étage, bureau n°01, avenue Hédi Nouira, Oued Souhil, Nabeul",
+"tel": "+216 24 180 777",
+"tels": [
+[
+"Numéro au registre de l'Ordre",
+"+216 54 208 788"
+]
+],
+"wa": "21624180777",
+"wed": "jusqu'à 17h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20Dr%20Wieme%20BOUGHZALA%2C%20ORL%20et%20CCF&query_place_id=ChIJw9qqGt2ZAhMRBNQ0KCZEQQg",
+"q": "Immeuble Melek, avenue Hédi Nouira, Oued Souhil, Nabeul"
+},
+"kine-meissem-gouddi-nabeul": {
+"mod": "l3_gouddi",
+"name": "Cabinet Meissem Gouddi",
+"kind": "para",
+"sector": "Kinésithérapie",
+"city": "Nabeul",
+"addr": "123 avenue Habib Thameur, immeuble Turki, 3e étage, Nabeul",
+"tel": "+216 50 255 254",
+"wa": "21650255254",
+"wed": "jusqu'à 18h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20Meissem%20Gouddi%20de%20kin%C3%A9sith%C3%A9rapie%20Nabeul&query_place_id=ChIJu6n5wWeZAhMRugFlEK5WCsE",
+"q": "Cabinet Meissem Gouddi kinésithérapie, Nabeul"
+},
+"dr-asma-hmila-nabeul": {
+"mod": "l3_hmila",
+"name": "Dr Asma Hmila",
+"kind": "med",
+"sector": "Gynécologie-obstétrique",
+"city": "Nabeul",
+"addr": "Immeuble Jawhara, 3e étage, bureau 3.3, 101 avenue Habib Thameur, Nabeul",
+"tel": "+216 99 003 236",
+"tels": [
+[
+"Cabinet (fixe)",
+"+216 72 287 662"
+],
+[
+"Autre numéro publié",
+"+216 99 003 131"
+]
+],
+"wa": "21699003236",
+"wed": "jusqu'à 17h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=Dr%20Asma%20Hmila%2C%20Gyn%C3%A9cologue%20Obst%C3%A9tricienne&query_place_id=ChIJL95ufO6ZAhMRAjywtmncgaw",
+"q": "Immeuble Jawhara, 101 avenue Habib Thameur, Nabeul"
+},
+"dr-khalil-houissa-nabeul": {
+"mod": "l3_houissa",
+"name": "Dr Khalil Houissa",
+"kind": "med",
+"sector": "Cardiologie",
+"city": "Nabeul",
+"addr": "Le Jasmin Médical, cabinet 402, avenue Hédi Nouira, Nabeul",
+"tel": "+216 96 420 620",
+"wa": "21696420620",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20Dr%20Khalil%20Houissa%20Cardiologue&query_place_id=ChIJHX3FrxWZAhMRmqENIgHXWNw",
+"q": "Le Jasmin Médical, avenue Hédi Nouira, Nabeul"
+},
+"elite-academy-hammamet": {
+"mod": "l3_elite",
+"name": "Elite Academy Hammamet",
+"kind": "edu",
+"sector": "Centre de formation",
+"city": "Hammamet",
+"addr": "Hammamet (adresse exacte à confirmer)",
+"tel": "+216 22 169 813",
+"wa": "21622169813",
+"thu": "ouverture à 08h00",
+"fb": "https://www.facebook.com/EliteAcademy.Hammamet/",
+"maps": "https://www.google.com/maps/search/?api=1&query=Elite%20Academy%20Hammamet&query_place_id=ChIJ8bVgegKeAhMRo4I2CngHo5c",
+"q": "Elite Academy Hammamet"
+},
+"dr-salah-guenbri-hammamet": {
+"mod": "l3_guenbri",
+"name": "Dr Salah Guenbri",
+"kind": "med",
+"sector": "Médecine générale",
+"city": "Hammamet",
+"addr": "Avenue de la Libération (Ettahrir), à côté de la banque STB, Hammamet",
+"tel": "+216 55 981 024",
+"tels": [
+[
+"Autre numéro publié",
+"+216 92 310 199"
+]
+],
+"wa": "21655981024",
+"wed": "jusqu'à 14h30",
+"fb": "https://www.facebook.com/DocGuenbri/",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20Dr.%20Guenbri%20Salah&query_place_id=ChIJf-shYwOeAhMRas8-0eZJ1AA",
+"q": "Cabinet Dr Salah Guenbri, avenue de la Libération, Hammamet"
+},
+"dr-emira-fenina-chtourou-hammamet": {
+"mod": "l3_fenina",
+"name": "Dr Emira Fenina Chtourou",
+"kind": "med",
+"sector": "Gynécologie-obstétrique",
+"city": "Hammamet",
+"addr": "Immeuble Les Oliviers, 2e étage, bureau B1, Souk Lekhmis, Hammamet",
+"tel": "+216 53 345 789",
+"tels": [
+[
+"Autre numéro publié",
+"+216 52 647 192"
+]
+],
+"wa": "21653345789",
+"email": "emirafenina@gmail.com",
+"wed": "jusqu'à 15h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=Dr%20Emira%20Fenina%20Chtourou%20Cabinet%20de%20Gyn%C3%A9cologie&query_place_id=ChIJNdA5VxafAhMR-UgjFSp3O0Q",
+"q": "Dr Emira Fenina Chtourou, Hammamet"
+},
+"kine-ahmed-boukadida-hammamet": {
+"mod": "l3_boukadida",
+"name": "Cabinet Ahmed Boukadida",
+"kind": "para",
+"sector": "Kinésithérapie et réadaptation fonctionnelle",
+"city": "Hammamet",
+"addr": "Rue Assad Ibn El Fourat, zone touristique, Hammamet",
+"tel": "+216 53 384 402",
+"wa": "21653384402",
+"wed": "jusqu'à 18h30",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20Boukadida%20AHMED%20de%20kin%C3%A9sith%C3%A9rapie%20et%20r%C3%A9adaptation%20fonctionnelle&query_place_id=ChIJaVKxW5OfAhMRmbzPJlsc6zM",
+"q": "Cabinet Boukadida Ahmed kinésithérapie, Hammamet"
+},
+"auto-ecole-moderne-grombalia": {
+"mod": "l3_moderne",
+"name": "Auto École Moderne",
+"kind": "drive",
+"sector": "Auto-école",
+"city": "Grombalia",
+"addr": "10 rue Mohamed V, Grombalia",
+"tel": "+216 55 355 335",
+"wa": "21655355335",
+"wed": "jusqu'à 18h00",
+"fb": "https://www.facebook.com/Auto.ecole.moderne/",
+"maps": "https://www.google.com/maps/search/?api=1&query=Auto%20Ecole%20Moderne&query_place_id=ChIJs4B6zJdb_RIRANI6v0SH9I0",
+"q": "Auto Ecole Moderne, rue Mohamed V, Grombalia"
+},
+"dr-mohamed-khelif-grombalia": {
+"mod": "l3_khelif",
+"name": "Dr Mohamed Khelif",
+"kind": "med",
+"sector": "Ophtalmologie",
+"city": "Grombalia",
+"addr": "Centre Hermès Médical, 6e étage, avenue Habib Bourguiba, en face de Carrefour Market, Grombalia",
+"tel": "+216 51 559 620",
+"wa": "21651559620",
+"email": "drkhelifmohamed@gmail.com",
+"wed": "jusqu'à 18h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20Dr%20Khelif%20mohamed&query_place_id=ChIJt79rXmRb_RIRFL7OyKmeAB0",
+"q": "Centre Hermès Médical, avenue Habib Bourguiba, Grombalia"
+},
+"avocate-imen-maaoui-grombalia": {
+"mod": "l3_maaoui",
+"name": "Maître Imen Maaoui",
+"ar": "الأستاذة إيمان المعاوي",
+"kind": "law",
+"sector": "Avocate",
+"city": "Grombalia",
+"addr": "Avenue de la Paix, Grombalia (numéro à confirmer)",
+"tel": "+216 25 040 426",
+"wa": "21625040426",
+"wed": "jusqu'à 17h30",
+"maps": "https://www.google.com/maps/search/?api=1&query=Maitre%20Imen%20Maaoui.Avocate&query_place_id=ChIJw1rT-RVb_RIRwRHw7ifM6no",
+"q": "Maître Imen Maaoui avocate, avenue de la Paix, Grombalia"
+},
+"dr-dorra-fenina-hammamet": {
+"mod": "l3_dorra",
+"name": "Dr Dorra Fenina",
+"kind": "dent",
+"sector": "Médecine dentaire",
+"city": "Hammamet",
+"addr": "Immeuble Émeraude, 2e étage, bureau n°1, avenue Habib Bourguiba, Hammamet",
+"tel": "+216 20 063 963",
+"wa": "21620063963",
+"wed": "jusqu'à 16h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20Dentaire%20Dr%20Dorra%20Fenina&query_place_id=ChIJ125t2gVh_RIRv33KPLer78Q",
+"q": "Immeuble Emeraude, avenue Habib Bourguiba, Hammamet"
+},
+"orthoptie-amina-romane-nabeul": {
+"mod": "l3_romane",
+"name": "Cabinet d’orthoptie Amina Romane",
+"kind": "para",
+"sector": "Orthoptie",
+"city": "Nabeul",
+"addr": "Immeuble Essalama, 1er étage, appartement 208, avenue Habib Thameur, Nabeul (près de Carrefour Market)",
+"tel": "+216 55 070 500",
+"wa": "21655070500",
+"wed": "jusqu'à 17h30",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20d%E2%80%99orthoptie%20Romane%20Amina&query_place_id=ChIJZ4qqYACZAhMRZeERjV0GPK8",
+"q": "Immeuble Essalama, avenue Habib Thameur, Nabeul"
+},
+"auto-ecole-hajri-hammamet": {
+"mod": "l3_hajri",
+"name": "Auto-école Abdel Kraim Hajri",
+"kind": "drive",
+"sector": "Auto-école",
+"city": "Hammamet",
+"addr": "Rue du 20 Mars 1956, Hammamet",
+"tel": "+216 97 491 762",
+"wa": "21697491762",
+"wed": "jusqu'à 18h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=auto%20ecole%20abdel%20kraim%20hajri&query_place_id=ChIJ1eal3Pth_RIR8hy2brGUONI",
+"q": "Auto école Abdel Kraim Hajri, Hammamet"
+},
+"auto-ecole-anis-abdelli-hammamet": {
+"mod": "l3_abdelli",
+"name": "Auto-école Anis Abdelli",
+"kind": "drive",
+"sector": "Auto-école",
+"city": "Hammamet",
+"addr": "Rue Chedly Mrad, Hammamet",
+"tel": "+216 52 575 731",
+"wa": "21652575731",
+"wed": "jusqu'à 18h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=Auto-%C3%A9cole%20Anis%20Abdelli&query_place_id=ChIJERYmu-yfAhMRfyeIZHoo47A",
+"q": "Auto-école Anis Abdelli, Hammamet"
+},
+"dr-fethi-boukadida-hammamet": {
+"mod": "l3_fethi",
+"name": "Dr Fethi Boukadida",
+"kind": "med",
+"sector": "Médecine générale",
+"city": "Hammamet",
+"addr": "27 avenue de la Libération, rond-point Julia, en face de la banque STB, Hammamet",
+"tel": "+216 96 282 866",
+"wa": "21696282866",
+"wed": "ouvert 24h/24 (relevé)",
+"maps": "https://www.google.com/maps/search/?api=1&query=Cabinet%20Dr%20Fethi%20Boukadida&query_place_id=ChIJtQA0T1th_RIRcgJ6nZEaYww",
+"q": "27 avenue de la Libération, Hammamet"
+},
+"labo-majdoubi-hammamet": {
+"mod": "l3_majdoubi",
+"name": "Laboratoire Majdoubi",
+"kind": "lab",
+"sector": "Laboratoire d'analyses médicales",
+"city": "Hammamet",
+"addr": "93 avenue du Koweït, en face de la Tour bleue, Hammamet",
+"tel": "+216 96 850 435",
+"wa": "21696850435",
+"wed": "jusqu'à 17h00",
+"maps": "https://www.google.com/maps/search/?api=1&query=LABO%20Majdoubi%20d%E2%80%99analyses%20M%C3%A9dicales&query_place_id=ChIJ-8WyJ39h_RIR0_n2saPoiR4",
+"q": "93 avenue du Koweït, Hammamet"
+},
+"la-cabane-nabeul": {
+"mod": "l3_cabane",
+"name": "La Cabane Café Resto",
+"kind": "food",
+"sector": "Café-restaurant",
+"city": "Nabeul",
+"addr": "Nabeul (plus code CMCC+RVF, adresse exacte à confirmer)",
+"tel": "+216 54 209 578",
+"wa": "21654209578",
+"fb": "https://www.facebook.com/cafe.laCABANE",
+"maps": "https://www.google.com/maps/search/?api=1&query=La%20Cabane%20Caf%C3%A9%20Resto%20Nabeul",
+"q": "CMCC+RVF Nabeul"
+},
+"villa-verde-bir-bou-rekba": {
+"mod": "l3_verde",
+"name": "Villa Verde",
+"kind": "stay",
+"sector": "Maison d'hôtes",
+"city": "Bir Bou Rekba",
+"addr": "Bir Bou Rekba, Hammamet (adresse exacte à confirmer)",
+"tel": "+216 58 600 000",
+"wa": "21658600000",
+"maps": "https://www.google.com/maps/search/?api=1&query=Villa%20Verde%20Bir%20Bou%20Rekba",
+"q": "Villa Verde, Bir Bou Rekba"
+}
+}
