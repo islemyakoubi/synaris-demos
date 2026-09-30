@@ -45,7 +45,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.02;margin:0;lett
 .hero .rise{animation:rise 1.4s var(--ease) both}.hero .rise:nth-child(2){animation-delay:.12s}.hero .rise:nth-child(3){animation-delay:.24s}.hero .rise:nth-child(4){animation-delay:.36s}
 @keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
 /* révélations */
-.rv-on [data-rv]{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}.rv-on [data-rv].in{opacity:1;transform:none}
+.rv-on [data-rv]{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}.rv-on [data-rv].rvd{opacity:1;transform:none}
 /* principes (ivoire) */
 .ivory{background:var(--ivory);color:#1b1a18}.ivory .lbl{color:#8a6d35}.ivory .lbl:before{background:#8a6d35}.ivory em{color:#8a6d35}
 .state{padding:9rem 0 8rem}.state h2{font-size:clamp(2.4rem,5.2vw,5rem);line-height:1.04;max-width:21ch}
@@ -70,7 +70,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.02;margin:0;lett
 /* bande parallaxe */
 .band{position:relative;height:78vh;min-height:520px;overflow:hidden;display:grid;place-items:center;text-align:center;isolation:isolate}
 .band .px{filter:saturate(.6) brightness(.72)}.band .shade{background:radial-gradient(ellipse at center,rgba(11,11,13,.35),rgba(11,11,13,.85)),linear-gradient(180deg,var(--ink),transparent 18%,transparent 82%,var(--coal))}
-.band h2{font-size:clamp(3rem,8vw,7.6rem);line-height:.95}.band p{font:500 .74rem/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold2);margin:2rem 0 0}
+.band h2{font-size:clamp(3rem,8vw,7.6rem);line-height:.95}.band h2 em{white-space:nowrap}.band p{font:500 .74rem/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold2);margin:2rem 0 0}
 .band figcaption{position:absolute;right:1.5rem;bottom:1.2rem;font-size:.66rem;color:rgba(243,237,226,.55);letter-spacing:.06em}
 /* approche */
 .appr{display:grid;grid-template-columns:5fr 7fr;gap:6rem;align-items:start}.stick{position:sticky;top:7rem}
@@ -148,7 +148,7 @@ STEPS = [('Prise de contact', 'Par téléphone ou WhatsApp, uniquement pour fixe
          ('Suivi du dossier', 'Les échanges se poursuivent au cabinet ou par les moyens convenus ensemble, à chaque étape.')]
 JS2 = r'''<script>(function(){var d=document,R=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 var els=d.querySelectorAll('[data-rv]');if('IntersectionObserver' in window&&!R){d.documentElement.classList.add('rv-on');
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rvd');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px',threshold:.06});
 els.forEach(function(e){io.observe(e)})}
 var px=[].slice.call(d.querySelectorAll('[data-px]'));if(!R&&px.length){var tk=0,vh=innerHeight;
 function u(){px.forEach(function(el){var r=el.parentElement.getBoundingClientRect();if(r.bottom<-50||r.top>vh+50)return;var k=parseFloat(el.getAttribute('data-px'));
