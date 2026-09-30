@@ -35,7 +35,7 @@ h1,h2,h3{font-weight:300;letter-spacing:-.018em}em{font-style:italic;color:var(-
 .dom .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}.dom .pic:hover img{transform:scale(1.03)}
 .dom figcaption,.cap{font-size:.76rem;opacity:.65;margin-top:.9rem;line-height:1.5}
 .doms{list-style:none;margin:0;padding:0;border-top:1px solid var(--fg)}.doms li{display:grid;grid-template-columns:4.2rem 1fr;gap:.4rem;padding:2rem 0;border-bottom:1px solid var(--line)}
-.doms b{font:italic 300 1.5rem/1.2 var(--disp);color:var(--brass)}.doms h3{font-size:1.75rem;font-weight:400;margin-bottom:.55rem}.doms p{margin:0;opacity:.78}
+.doms b{font:italic 300 1.5rem/1.2 var(--disp);color:var(--brass);display:flex;flex-direction:column;gap:.7rem}.doms b svg{width:30px;height:30px;color:var(--acc)}.doms h3{font-size:1.75rem;font-weight:400;margin-bottom:.55rem}.doms p{margin:0;opacity:.78}
 .gen{display:flex;gap:1rem;align-items:flex-start;margin-top:2rem;padding:1.3rem 1.4rem;background:var(--paper2);font-size:.9rem;line-height:1.6}.gen svg{width:22px;height:22px;flex:none;color:var(--acc);margin-top:.1rem}.gen p{margin:0}
 .bino{background:var(--ink);color:#EEF1EE;--line:rgba(238,241,238,.15)}.bino .kick{color:var(--aqua)}.bino em{color:var(--aqua)}
 .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
@@ -46,7 +46,7 @@ h1,h2,h3{font-weight:300;letter-spacing:-.018em}em{font-style:italic;color:var(-
 .trio{display:grid;grid-template-columns:repeat(3,1fr);margin-top:2.6rem;border-top:1px solid var(--line)}.trio div{padding:1.5rem 1.2rem 0 0}.trio div+div{padding-left:1.2rem;border-left:1px solid var(--line)}
 .trio h3{font-size:1.45rem;font-weight:400;color:var(--aqua);margin-bottom:.4rem}.trio p{margin:0;font-size:.9rem;opacity:.75;line-height:1.55}
 .band{position:relative;height:72vh;min-height:420px;overflow:hidden;isolation:isolate;display:flex;align-items:flex-end;color:#fff}
-.band .px{left:-3%;width:114%}.band:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(17,27,36,.92) 8%,rgba(17,27,36,.55) 42%,rgba(17,27,36,.12) 75%)}
+.band .px{object-position:50% 40%}.band:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(17,27,36,.92) 8%,rgba(17,27,36,.55) 42%,rgba(17,27,36,.12) 75%)}
 .band .w{padding-bottom:3rem;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}.band h2{font-size:clamp(2.2rem,4.6vw,4.4rem);max-width:14em}.band em{color:var(--aqua)}.band small{opacity:.8;font-size:.72rem;white-space:nowrap}
 .venir{display:grid;grid-template-columns:.85fr 1.15fr;gap:6rem;align-items:center}
 .venir figure{margin:0}.venir .in{aspect-ratio:4/5;overflow:hidden}.venir img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:saturate(.78) contrast(1.03) sepia(.08)}
@@ -67,6 +67,9 @@ section[id]{scroll-margin-top:64px}.cab{background:var(--paper2)}#rdv{padding:6.
 .trio{grid-template-columns:1fr}.trio div,.trio div+div{padding:1.2rem 0;border-left:0;border-bottom:1px solid var(--line)}.card{padding:1.6rem}.dl div{grid-template-columns:1fr;gap:.15rem}.doms li{grid-template-columns:3rem 1fr}.band{height:60vh}}
 '''
 def build(F, M):
+    # Crédits : les fichiers Wellcome n'ont pas de champ auteur sur Commons ; titres longs abrégés proprement.
+    M.cr = [(n, dict(x, artist=x['artist'] or ('Science Museum, London (Wellcome Images)' if 'Wellcome' in x['title'] else ''),
+                     title=x['title'] if len(x['title']) <= 80 else x['title'][:48].rstrip(' ,') + '… Wellcome ' + x['title'].rsplit('Wellcome ', 1)[-1])) for n, x in M.cr]
     msg = 'Bonjour, je souhaite prendre rendez-vous au cabinet d’orthoptie.'
     brand = f'<span class="mono">{RINGS}</span><span><b>Amina Romane</b><small>Orthoptiste · Nabeul</small></span>'
     links = [('L’orthoptie', '#orthoptie'), ('Vision binoculaire', '#binoculaire'), ('Le cabinet', '#cabinet'), ('Accès', '#acces')]
@@ -74,7 +77,13 @@ def build(F, M):
             ('La rééducation orthoptique', 'Des séances d’exercices visuels qui visent à améliorer la coordination des deux yeux, par exemple en cas de fatigue visuelle ou de difficulté à fixer de près.'),
             ('Strabisme et amblyopie', 'Le suivi, en lien avec l’ophtalmologiste, d’un enfant ou d’un adulte présentant un strabisme ou une amblyopie (« œil paresseux »).'),
             ('La basse vision', 'L’accompagnement des personnes malvoyantes, pour mieux utiliser leurs capacités visuelles dans les gestes du quotidien.')]
-    dh = ''.join(f'<li data-rv style="--d:{i*.08:.2f}s"><b>0{i+1}</b><div><h3>{t}</h3><p>{p}</p></div></li>' for i, (t, p) in enumerate(doms))
+    # Pictos fins (vision) : bilan = œil, rééducation = convergence des deux yeux, strabisme/amblyopie = cache, basse vision = loupe.
+    ICO = ['<circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r=".6" fill="currentColor"/><path d="M2 12s3.7-6.4 10-6.4S22 12 22 12s-3.7 6.4-10 6.4S2 12 2 12z"/>',
+           '<circle cx="6.8" cy="9" r="3.4"/><circle cx="17.2" cy="9" r="3.4"/><path d="M6.8 15.2 12 19.6l5.2-4.4"/>',
+           '<path d="M2.5 7.2c6.2-2.6 12.8-2.6 19 0"/><circle cx="7" cy="12.4" r="3.4"/><circle cx="17" cy="12.4" r="3.9" fill="currentColor" fill-opacity=".22"/>',
+           '<circle cx="10" cy="10" r="6.6"/><path d="m15 15 5.6 5.6M6.4 10s1.5-2.3 3.6-2.3 3.6 2.3 3.6 2.3-1.5 2.3-3.6 2.3S6.4 10 6.4 10z"/>']
+    svg = lambda k: f'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">{ICO[k]}</svg>'
+    dh = ''.join(f'<li data-rv style="--d:{i*.08:.2f}s"><b>0{i+1}{svg(i)}</b><div><h3>{t}</h3><p>{p}</p></div></li>' for i, (t, p) in enumerate(doms))
     trio = [('Fusion', 'L’assemblage, par le cerveau, des images des deux yeux en une seule.'), ('Convergence', 'Le rapprochement des deux yeux pour regarder de près, en lecture par exemple.'), ('Relief', 'La perception de la profondeur, rendue possible par la vision des deux yeux.')]
     th = ''.join(f'<div data-rv style="--d:{i*.1:.1f}s"><h3>{t}</h3><p>{p}</p></div>' for i, (t, p) in enumerate(trio))
     wa = K.walink(F['wa'], msg)
@@ -95,7 +104,7 @@ def build(F, M):
 <p class="l" data-rv>Chaque œil voit une image légèrement différente. Le cerveau les assemble en une image unique et en relief : c'est la vision binoculaire.</p>
 <p class="l" data-rv>Quand cet équilibre est perturbé, il peut se traduire par exemple par une fatigue visuelle, une vision double ou un strabisme. Le diagnostic relève du médecin.</p>
 <div class="trio">{th}</div></div></div></section>
-<figure class="band" style="margin:0"><div class="pxw">{M.img('phoro', 'Appareil d’examen de la vue (photo d’illustration)', cls='px', sizes='100vw', extra=' data-px=".14"')}</div><div class="w" data-rv><h2>Sur rendez-vous, avenue <em>Habib Thameur</em>.</h2><small>Photo d'illustration · ne montre pas le cabinet</small></div></figure>
+<figure class="band" style="margin:0"><div class="pxw">{M.img('verres', 'Boîte ancienne de verres d’essai et monture d’essai (photo d’illustration)', cls='px', sizes='100vw', extra=' data-px=".14"')}</div><div class="w" data-rv><h2>Sur rendez-vous, avenue <em>Habib Thameur</em>.</h2><small>Photo d'illustration · ne montre pas le cabinet</small></div></figure>
 <section class="sec" id="venir"><div class="w venir"><figure data-rv><div class="in">{M.img('patch', 'Enfant portant un cache sur un œil (photo d’illustration)', sizes='(max-width: 960px) 92vw, 460px')}</div><figcaption class="cap">Photo d'illustration · ne montre pas le cabinet ni ses patients.</figcaption></figure>
 <div><p class="kick" data-rv>Votre rendez-vous</p><h2 data-rv>Préparer votre <em>venue</em>.</h2><ol class="steps">
 <li data-rv><div><h3>Prendre rendez-vous</h3><p>Par téléphone au <a href="{K.telhref(F['tel'])}">{F['tel']}</a>, ou par <a href="{wa}" target="_blank" rel="noopener">WhatsApp</a>.</p></div></li>
