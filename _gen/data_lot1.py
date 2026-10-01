@@ -1,4 +1,4 @@
-# Lot 1 (Cap Bon) — 8 restaurants/cafés + 1 atelier faire-part (7 démos retirées le 30/09/2026).
+# Lot 1 (Cap Bon) — 8 restaurants/cafés (7 démos retirées le 30/09/2026, atelier faire-part retiré le 01/10/2026).
 # Données relevées sur fiches publiques (lacarte.menu, plurielle.tn, restaurantguru.com) le 30/09/2026.
 import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_lot1 import build_resto, build_event, build_invit, ph
@@ -276,39 +276,3 @@ resto(slug='haouaria-beach', name='Haouaria Beach', mark='H', font='outfit',
  loc_h2='Sur la plage d’El Haouaria', loc_p='À la pointe du Cap Bon, à environ 1h30 de Tunis.',
  hours=[('Tous les jours', PH)], hours_short=f'Horaires {PH}',
  ratings=[rt('3.7', 273, 'note moyenne', 'lacarte.menu', 'https://lacarte.menu/restaurants/el-haouaria/haouaria-beach')])
-
-# 16 ----------------------------------------------------------------- RUSTIQUE INVITATION (Hammamet) — atelier faire-part
-build_invit(dict(slug='rustique-invitation-hammamet', name='Rustique Invitation', mark='R', font='fraunces',
- theme=dict(accent='#7b5a3c', accent2='#b5838d', soft='#f4ebe3', bg='#fcfaf6', bgalt='#f3ede4', ink='#2a1d12'),
- title='Rustique Invitation — Faire-part & cartes d’invitation, Hammamet (démo)',
- desc='Rustique Invitation, Hammamet : faire-part de mariage, fiançailles, henna, naissance, sur mesure. Devis en 1 minute via WhatsApp.',
- tagline='Faire-part & invitations · Hammamet', eyebrow='Atelier de faire-part · Hammamet',
- h1='Des faire-part qui ressemblent à votre histoire',
- lead='Mariage, fiançailles, henna, naissance : des cartes d’invitation personnalisées, du style rustique kraft au plus élégant.',
- open_badge='Lun.–sam. 10h–20h · dim. 10h–13h', hero_alt='Faire-part (illustration)',
- about_eyebrow='L’atelier', about_h2='Un atelier d’invitations à Hammamet',
- about_p=['Rustique Invitation crée des cartes d’invitation et faire-part personnalisés pour les grands moments de la vie.',
-          f'Modèles, papiers, finitions (dorure, sceau de cire, enveloppes) et délais de fabrication {PH} : ils seront présentés avec vos vraies réalisations.'],
- about_img='about', about_alt='Fleurs séchées (photo d’ambiance)',
- chips=['Mariage', 'Fiançailles', 'Henna', 'Naissance'],
- coll_h2='Trouvez votre style', coll_lead='Des catégories pour aider les futurs mariés à choisir avant même de vous appeler.',
- collections=[dict(img='c1', alt='Faire-part en papier kraft', name='Rustique kraft', desc='Papier kraft, ficelle, étiquettes.'),
-              dict(img='c2', alt='Calligraphie à la plume', name='Calligraphie', desc='Textes en arabe et en français.'),
-              dict(img='c3', alt='Henné sur une main', name='Henna & outya', desc='Cartes pour les fêtes traditionnelles.'),
-              dict(img='c4', alt='Faire-part moderne', name='Moderne & minimal', desc='Lignes épurées, typographies fines.'),
-              dict(img='c5', alt='Fleurs séchées', name='Bohème fleurs séchées', desc='Fleurs séchées et tons naturels.'),
-              dict(img='c6', alt='Table de réception', name='Papeterie de table', desc='Menus, marque-places, plans de table.')],
- features=[('chat', '1. Votre idée', 'Envoyez une photo d’inspiration et vos couleurs sur WhatsApp.'), ('book', '2. Maquette & BAT', 'Bon à tirer validé en ligne, prénoms et dates vérifiés.'),
-           ('store', '3. Fabrication', f'Impression et finitions à l’atelier, délai {PH}.'), ('truck', '4. Retrait ou livraison', f'À l’atelier de Hammamet ou livraison {PH}.')],
- gal_h2='Inspirations', gal_lead='Couleurs, matières et détails pour vos invitations.',
- gallery=[('g1', 'Bouquet de mariée'), ('g2', 'Fleurs séchées'), ('g3', 'Calligraphie sur bois'), ('g4', 'Table de réception décorée'), ('c1', 'Faire-part kraft'), ('c2', 'Calligraphie')],
- book_note=f'Prix par quantité, délais et minimum de commande {PH}.',
- form_intro='Bonjour Rustique Invitation, je souhaite un devis :',
- wa_msg='Bonjour Rustique Invitation, je souhaite un devis pour des faire-part.',
- wa='21656169266', wa_disp='+216 56 169 266', tels=['+216 56 169 266'], email='',
- address='Rue Hassan Hosni Abdelwahab, 8050 Hammamet', map_q='36.4032338,10.6378607', map_z=17,
- loc_h2='L’atelier à Hammamet', loc_p='Venez voir et toucher les modèles à l’atelier.',
- hours=[('Lundi – Samedi', '10:00 – 20:00'), ('Dimanche', '10:00 – 13:00')], hours_short='Lun.–sam. 10h–20h · dim. 10h–13h',
- social=[('Facebook', 'www.facebook.com/rustiqueinvitation')],
- collect_txt='Un lien « Laissez un avis » envoyé avec la livraison des cartes : vos clients satisfaits deviennent votre vitrine.',
- ratings=[rt('5.0', 69, 'note moyenne', 'plurielle.tn', 'https://plurielle.tn/pro/nabeul/rustique-invitation/')]))
