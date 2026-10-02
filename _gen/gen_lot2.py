@@ -14,7 +14,7 @@ MODS = {'nb-language-center-dar-chaabane': 'l2_nb', 'dr-manel-attia-hammamet': '
         'soliman-informatique-langues': 'l2_soliman', 'dr-hend-ben-mustapha-soliman': 'l2_hend', 'dr-yasmine-damergi-nabeul': 'l2_damergi',
         'dr-sarra-haouet-mrezga': 'l2_haouet', 'dr-ichrak-hammami-nabeul': 'l2_hammami', 'dr-houssem-el-manaa-menzel-temime': 'l2_elmanaa',
         'dr-ghada-bassoumi-hammamet': 'l2_bassoumi', 'oralion-dental-clinic-hammamet': 'l2_oralion', 'dr-hamadi-regaieg-hammamet': 'l2_regaieg',
-        'dr-obay-becem-kelibia': 'l2_obay', 'dr-imen-kdous-kelibia': 'l2_kdous', 'my-smile-ridene-kelibia': 'l2_mysmile',
+        'dr-obay-becem-kelibia': 'l2_obay', 'my-smile-ridene-kelibia': 'l2_mysmile',
         'dr-souha-khefifi-grombalia': 'l2_khefifi', 'lino-garderie-nabeul': 'l2_lino'}
 
 def get(url):
